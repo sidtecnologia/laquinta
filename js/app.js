@@ -473,18 +473,27 @@ document.addEventListener('DOMContentLoaded', () => {
   finalizeBtn.addEventListener('click', () => {
     const name = customerNameInput.value.trim();
     const address = customerAddressInput.value.trim();
+    const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
+    const deliveryType = document.querySelector('input[name="deliveryType"]:checked')?.value || '';
+
     if (!name || !address) {
       alert('Por favor completa nombre y dirección');
       return;
     }
     const whatsappNumber = '573227671829';
-    let message = `Hola, soy ${encodeURIComponent(name)}.%0AQuiero hacer este pedido para entregar en: ${encodeURIComponent(address)}%0A%0A`;
+    let message = `Hola, soy ${encodeURIComponent(name)}.%0A`;
+    message += `Dirección: ${encodeURIComponent(address)}%0A`;
+    message += `Método de pago: ${encodeURIComponent(payment)}%0A`;
+    message += `Entrega: ${encodeURIComponent(deliveryType)}%0A%0A`;
+    message += `Pedido:%0A`;
+
     let total = 0;
     cart.forEach(item => {
       message += `- ${encodeURIComponent(item.name)} x${item.qty} = $${money(item.price * item.qty)}%0A`;
       total += item.price * item.qty;
     });
-    message += `%0ATotal:%20$${money(total)}`;
+    message += `%0ATotal: $${money(total)}`;
+
     const link = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(link, '_blank');
     closeModal(checkoutModal);

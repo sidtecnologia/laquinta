@@ -129,6 +129,17 @@
                 <label for="customer-address">Dirección:</label>
                 <input type="text" id="customer-address" placeholder="Tu dirección de entrega" required>
               </div>
+              <label>Método de pago:</label>
+              <div>
+                  <label><input type="radio" name="payment"         value="Efectivo" checked> Efectivo</label>
+                  <label><input type="radio" name="payment"         value="Transferencia"> Transferencia</label       >
+              </div>
+      
+      <label>Entrega:</label>
+      <div>
+        <label><input type="radio" name="deliveryType" value="Recoger en tienda" checked> Recoger en tienda</label>
+        <label><input type="radio" name="deliveryType" value="A domicilio"> A domicilio</label>
+      </div>
               <button id="finalize-btn" class="checkout-btn">Continuar</button>
             </div>
           </div>
