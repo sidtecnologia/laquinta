@@ -1,4 +1,4 @@
-const CACHE_NAME = 'todomenos-cache-v1';
+const CACHE_NAME = 'laquinta-cache-v1';
 const urlsToCache = [
     '/',
 ];
