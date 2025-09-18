@@ -480,10 +480,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const whatsappNumber = '573227671829';
-    let message = `Hola, soy ${encodeURIComponent(name)}.%0A`;
-    message += `Dirección: ${encodeURIComponent(address)}%0A`;
-    message += `Método de pago: ${encodeURIComponent(payment)}%0A`;
-    message += `Pedido:%0A`;
+    let message = `Hola, soy *${encodeURIComponent(name)}*.%0A`;
+    message += `Dirección: *${encodeURIComponent(address)}*%0A`;
+    message += `Método de pago: *${encodeURIComponent(payment)}*%0A`;
+    message += `Mi Pedido:%0A`;
 
     let total = 0;
     cart.forEach(item => {
