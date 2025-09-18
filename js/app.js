@@ -473,34 +473,30 @@ document.addEventListener('DOMContentLoaded', () => {
   finalizeBtn.addEventListener('click', () => {
     const name = customerNameInput.value.trim();
     const address = customerAddressInput.value.trim();
+    const payment = document.querySelector('input[name="payment"]:checked')?.value || '';
 
-    // Validación para asegurar que los campos no estén vacíos
     if (!name || !address) {
-        alert('Por favor, completa tu nombre y dirección para continuar.');
-        return;
+      alert('Por favor completa nombre y dirección');
+      return;
     }
+    const whatsappNumber = '573227671829';
+    let message = `Hola, soy ${encodeURIComponent(name)}.%0A`;
+    message += `Dirección: ${encodeURIComponent(address)}%0A`;
+    message += `Método de pago: ${encodeURIComponent(payment)}%0A`;
+    message += `Pedido:%0A`;
 
-    const whatsappNumber = '573227671829'; // Tu número de WhatsApp
     let total = 0;
-
-    // Construye el mensaje para WhatsApp
-    let message = `Hola, mi nombre es *${encodeURIComponent(name)}*.%0A%0AQuisiera hacer el siguiente pedido para entregar en la dirección: *${encodeURIComponent(address)}*%0A%0A--- MI PEDIDO ---%0A`;
-
     cart.forEach(item => {
-        message += `✅ ${encodeURIComponent(item.name)} (x${item.qty}) - $${money(item.price * item.qty)}%0A`;
-        total += item.price * item.qty;
+      message += `- ${encodeURIComponent(item.name)} x${item.qty} = $${money(item.price * item.qty)}%0A`;
+      total += item.price * item.qty;
     });
+    message += `%0ATotal: $${money(total)}`;
 
-    message += `--------------------%0A*Total del Pedido: $${money(total)}*`;
-
-    // Abre la ventana de WhatsApp
     const link = `https://wa.me/${whatsappNumber}?text=${message}`;
     window.open(link, '_blank');
-
-    // Cierra los modales
     closeModal(checkoutModal);
     closeModal(cartModal);
-});
+  });
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
