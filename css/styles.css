@@ -27,7 +27,7 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
-  padding-top: 70px; /* Espacio para la navbar fija */
+  padding-top: 59px; /* Espacio para la navbar fija */
 }
 
 /* Main Container */
@@ -529,13 +529,13 @@ body {
 .ticker-text {
     display: inline-block;
     /* La animación 'ticker-scroll' se define abajo */
-    animation: ticker-scroll 30s linear infinite;
+    animation: ticker-scroll 60s linear infinite;
 }
 
 .ticker-text span {
     font-size: 0.9rem;
     font-weight: 600;
-    margin-right: 3rem; /* Espacio entre cada mensaje */
+    margin-right: 1.2rem; /* Espacio entre cada mensaje */
 }
 
 /* Animación que mueve el texto */
@@ -545,6 +545,6 @@ body {
     }
     100% {
         /* Mueve el texto a la izquierda la mitad de su ancho total */
-        transform: translateX(-50%);
+        transform: translateX(-30%);
     }
 }
