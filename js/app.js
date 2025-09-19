@@ -1,3 +1,19 @@
+/**
+ * @license
+ * Copyright © 2025 Tecnología y Soluciones Informáticas. Todos los derechos reservados.
+ *
+ * AUTOSERVICIO LA QUINTA PWA
+ *
+ * Este software es propiedad confidencial y exclusiva de TECSIN.
+ * El permiso de uso de este software es temporal para pruebas en Autoservicio La Quinta.
+ *
+ * Queda estrictamente prohibida la copia, modificación, distribución,
+ * ingeniería inversa o cualquier otro uso no autorizado de este código
+ * sin el consentimiento explícito por escrito del autor.
+ *
+ * Para más información, contactar a: sidsoporte@proton.me
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- DOM refs ---
