@@ -370,6 +370,15 @@ document.addEventListener('DOMContentLoaded', () => {
     showModal(productModal);
   }
 
+  // --- Ads click -> abrir modal de producto
+document.querySelectorAll('.ad-image').forEach(img => {
+  img.addEventListener('click', () => {
+    const id = img.dataset.productId;
+    openProductModal(id);
+  });
+});
+
+
   function updateCarousel(images) {
     carouselImagesContainer.innerHTML = '';
     if (!images || images.length === 0) {

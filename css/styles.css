@@ -1,7 +1,7 @@
 :root {
   --primary: #009540;
   --secondary: #0da300;
-  --accent: #0a3df7;
+  --accent: #060606cc;
   --bg: #f5f5f5;
   --card-bg: #fff;
   --radius: 10px;
@@ -190,7 +190,7 @@ body {
 
 /* Categories Carousel */
 .menu-container {
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
 .category-carousel-container {
@@ -242,7 +242,7 @@ body {
   text-align: center;
   color: var(--primary);
   font-size: 1.2rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .section-title::before {
@@ -330,6 +330,7 @@ body {
 }
 
 .carousel-images-container {
+  background: var(--card-bg);
   display: flex;
   transition: transform .4s ease;
   height: 100%;
@@ -488,6 +489,7 @@ body {
   }
 
   .carousel-container {
+    background: var(--card-bg);
     height: 200px;
   }
 
@@ -657,5 +659,42 @@ body {
 
   100% {
     transform: translateX(-30%);
+  }
+}
+
+/* Ads Section */
+.ads-section {
+  padding: 1rem;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.ad-image {
+  width: 100%;
+  aspect-ratio: 1/1; /* cuadrado */
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.ad-image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .ads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ads-grid {
+    grid-template-columns: 1fr;
   }
 }
